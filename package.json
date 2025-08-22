@@ -1,17 +1,30 @@
 {
   "name": "study-project",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run dev:frontend\" \"npm run dev:Server\"",
-    "dev:frontend": "npm --prefix frontend run dev",
-    "dev:Server": "npm --prefix Server run dev",
-    "start": "npm --prefix server start",
-    "build": "npm --prefix frontend run build",
-    "lint:frontend": "npm --prefix frontend run lint"
+    "dev": "concurrently -n \"CLIENT,SERVER\" -c \"bgBlue,bgYellow\" \"npm run dev:frontend\" \"npm run dev:server\"",
+    "dev:frontend": "vite",
+    "dev:server": "npm run dev --prefix ./Server",
+    "build": "vite build",
+    "start": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.8.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.1",
+    "autoprefixer": "^10.4.21",
     "concurrently": "^8.2.0",
-    "nodemon": "^3.1.10"
+    "eslint": "^9.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
+    "vite": "^5.0.0"
   }
 }
