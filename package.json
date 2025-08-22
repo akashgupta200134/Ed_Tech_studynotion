@@ -1,0 +1,17 @@
+{
+  "name": "study-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run dev:frontend\" \"npm run dev:Server\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:Server": "npm --prefix Server run dev",
+    "start": "npm --prefix server start",
+    "build": "npm --prefix frontend run build",
+    "lint:frontend": "npm --prefix frontend run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.1.10"
+  }
+}
