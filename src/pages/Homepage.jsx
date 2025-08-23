@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import Highlighttext from "../components/Highlighttext";
 import Button from "../components/Button";
-import Banner from  "../assets/Images/banner.mp4"
+import Banner from "../../assets/Images/banner.mp4";
 import CodeBlocks from "../components/codeblocks";
+import ExploreMore from "../components/ExploreMore";
+import Learningsection from "../components/Learningsection";
 
 const Homepage = ({ text, children, active, linkto }) => {
   return (
@@ -45,93 +47,97 @@ const Homepage = ({ text, children, active, linkto }) => {
           </Button>
         </div>
 
-
- <div className=" my-14 mx-auto max-w-3xl  shadow-[10px_-5px_50px_-5px] shadow-blue-200">
-  <video
-    muted
-    loop
-    autoPlay
-    playsInline
-    className=" aspect-video object-contain rounded-lg shadow-[15px_15px_rgba(255,255,255)]"
-  >
-    <source src={Banner} type="video/mp4" />
-  </video>
-</div>
-
-
-
-{/* Code Section-1 */}
-    <div>
-                <CodeBlocks 
-                    position={"lg:flex-row"}
-                    heading={
-                        <div className="text-4xl font-semibold">
-                            Unlock Your
-                            <Highlighttext text={" coding potential "} />
-                            with our online courses
-                        </div>  
-                    }
-                    subheading={
-                        "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
-                    }
-                    ctabtn1={
-                        {
-                            btnText: "Try it Yourself",
-                            linkto: "/signup",
-                            active: true,
-                        }
-                    }
-                    ctabtn2={
-                        {
-                            btnText: "Learn More",
-                            linkto: "/login",
-                            active: false,
-                        }
-                    }
-                    codeblock={
-                        `<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a>This is myPage</h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a>\n<a href="/three">Three</a>\n</nav>\n</body>`
-                    }
-                    codeColor={"text-yellow-25"}
-                    backgroundGradient={"codeblock1"}
-                />
-            </div>
-
-{/* Code Section-2 */}
-<div className="mt-28">
-  <CodeBlocks 
-    position={"flex lg:flex-row-reverse flex-col items-center gap-10"}
-    heading={
-      <div className="text-4xl lg:text-5xl font-bold leading-snug text-center lg:text-left">
-        Start
-        <Highlighttext text={" coding in seconds "} />
-      </div>  
-    }
-    subheading={
-      "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
-    }
-    ctabtn1={{
-      btnText: "Continue Lesson",
-      linkto: "/signup",
-      active: true,
-    }}
-    ctabtn2={{
-      btnText: "Learn More",
-      linkto: "/login",
-      active: false,
-    }}
-    codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a>This is myPage</h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
-    codeColor={"text-white"}
-    backgroundGradient={"codeblock2"}
-  />
-</div>
-
-            
-            {/* <ExploreMore /> */}
-
+        <div className=" my-14 mx-auto max-w-3xl  shadow-[10px_-5px_50px_-5px] shadow-blue-200">
+          <video
+            muted
+            loop
+            autoPlay
+            playsInline
+            className=" aspect-video object-contain rounded-lg shadow-[15px_15px_rgba(255,255,255)]"
+          >
+            <source src={Banner} type="video/mp4" />
+          </video>
         </div>
 
+        {/* Code Section-1 */}
+        <div>
+          <CodeBlocks
+            position={"lg:flex-row text-left"}
+            heading={
+              <div className="text-5xl font-semibold">
+                Unlock Your
+                <Highlighttext text={" coding potential "} />
+                with our online courses
+              </div>
+            }
+            subheading={
+              "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+            }
+            ctabtn1={{
+              btnText: "Try it Yourself",
+              linkto: "/signup",
+              active: true,
+              className: "-mt-10",
+            }}
+            ctabtn2={{
+              btnText: "Learn More",
+              linkto: "/login",
+              active: false,
+              className: "-mt-10",
+            }}
+            codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a>This is myPage</h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a>\n<a href="/three">Three</a>\n</nav>\n</body>`}
+            codeColor={"text-yellow-25"}
+            backgroundGradient={"codeblock1"}
+          />
+        </div>
 
-    
+        {/* Code Section-2*/}
+        <div>
+          <CodeBlocks
+            position={
+              "flex lg:flex-row-reverse text-left my-20 justify-between gap-10 lg:gap-10"
+            }
+            heading={
+              <div className="text-5xl font-semibold ml-18">
+                Start
+                <Highlighttext text={" coding in seconds "} />
+              </div>
+            }
+            subheading={
+              <div className=" text-sm ml-19">
+                Take the leap and start coding today! With our hands-on learning
+                approach, you'll be creating real projects from your very first
+                lesson.
+              </div>
+            }
+            ctabtn1={{
+              btnText: "Continue Lesson",
+              linkto: "/signup",
+              active: true,
+              className: "ml-19",
+            }}
+
+            ctabtn2={{
+              btnText: "Learn More",
+              linkto: "/login",
+              active: false,
+            
+            }}
+
+
+            codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a>This is myPage</h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
+            codeColor={"text-white"}
+            backgroundGradient={"codeblock2"}
+          />
+        </div>
+      </div>
+           
+           <ExploreMore/>
+
+
+
+
+
     </div>
   );
 };
