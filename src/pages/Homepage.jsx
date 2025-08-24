@@ -5,7 +5,9 @@ import Button from "../components/Button";
 import Banner from "../../assets/Images/banner.mp4";
 import CodeBlocks from "../components/codeblocks";
 import ExploreMore from "../components/ExploreMore";
-import Learningsection from "../components/Learningsection";
+import InstructorSection from "../components/InstructorSection"
+import Footer from "../components/common/footer";
+
 
 const Homepage = ({ text, children, active, linkto }) => {
   return (
@@ -123,8 +125,6 @@ const Homepage = ({ text, children, active, linkto }) => {
               active: false,
             
             }}
-
-
             codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a>This is myPage</h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
             codeColor={"text-white"}
             backgroundGradient={"codeblock2"}
@@ -132,7 +132,29 @@ const Homepage = ({ text, children, active, linkto }) => {
         </div>
       </div>
            
+           
+
+
            <ExploreMore/>
+
+
+   <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
+
+       <InstructorSection/>
+
+
+
+            <h1 className="text-center text-4xl font-semibold mt-8">Reviews from other learners</h1>
+
+            
+            <div>
+                {/* Review Slider */}
+            </div>
+        </div>
+
+
+
+        <Footer/>
 
 
 

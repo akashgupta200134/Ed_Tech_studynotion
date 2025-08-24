@@ -1,6 +1,6 @@
 export const HomePageExplore = [
     {
-        tag: 'Free',
+        tag:'Free',
         courses : [
             {
                 heading : "Learn HTML",

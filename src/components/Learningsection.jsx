@@ -9,10 +9,10 @@ import Button from "./Button";
 
 const Learningsection = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-5 mt-20">
-      <div className="text-6xl text-center font-bold">
+    <div className="flex flex-col items-center justify-center p-24 ">
+      <div className="text-5xl text-center font-bold">
         Your swiss knife for
-        <Highlighttext text={"Learning Any Language"} />
+        <Highlighttext text={" Learning Any Language"} />
         <div className="text-[16px] max-w-5xl  font-normal p-[20px]">
           Using <span className="font-semibold text-blue-600">Spin</span>,
           learning multiple languages becomes effortless. With{" "}
@@ -22,7 +22,7 @@ const Learningsection = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center -mt-5 ">
+      <div className="flex flex-row items-center justify-center mb-10 -mt-5 ">
         <img
           src={planYourprogress}
           alt="planYourprogress"
@@ -45,7 +45,6 @@ const Learningsection = () => {
       <Button active={true} linkto={"/login"}>
         Learn More
       </Button>
-
 
 
     </div>
