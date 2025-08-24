@@ -19,6 +19,7 @@ exports.createCategory = async (req, res) => {
       Name: Name,
       description: description,
     });
+
     console.log(CategoryDetails);
     //return response
     return res.status(200).json({
@@ -37,7 +38,7 @@ exports.showAllCategories = async (req, res) => {
   try {
     const allCategories = await Category.find(
       {},
-      { name: true, description: true }
+      { Name: true, description: true }
     );
     res.status(200).json({
       success: true,
