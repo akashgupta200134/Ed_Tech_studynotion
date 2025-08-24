@@ -7,6 +7,7 @@ import CodeBlocks from "../components/codeblocks";
 import ExploreMore from "../components/ExploreMore";
 import InstructorSection from "../components/InstructorSection"
 import Footer from "../components/common/footer";
+import SignupForm from "./Signupfrom";
 
 
 const Homepage = ({ text, children, active, linkto }) => {
@@ -156,6 +157,7 @@ const Homepage = ({ text, children, active, linkto }) => {
 
         <Footer/>
 
+{/* <SignupForm></SignupForm> */}
 
 
 
