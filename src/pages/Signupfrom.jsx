@@ -1,14 +1,16 @@
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { sendOtp } from "../services/operations/authApI"
+import { setSignupData } from "../slices/authSlice"
 import { ACCOUNT_TYPE } from "../utils/costans"
-import Tab from "../../src/components/common/Tab"
-
-
+import Tab from "../components/common/Tab"
 
 function SignupForm() {
-    // const navigate = useNavigate()
-    // const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     //student or instructor
     const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT)
@@ -46,7 +48,14 @@ function SignupForm() {
             ...formData,
             accountType,
         }
-        
+
+        //Setting signup data to state
+        //To be used after OTP verification
+        dispatch(setSignupData(signupData))
+        //send OTP to user for verification
+        dispatch(sendOtp(formData.email, navigate))
+
+        //Reset 
         setFormData({
             firstName: "",
             lastName: "",
@@ -74,7 +83,7 @@ function SignupForm() {
     return (
         <div>
             {/* Student-Instructor Tab */}
-            <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max">
+            {/* <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max">
                 <button
                     className={`${accountType === "Student"
                     ? "bg-richblack-900 text-richblack-5"
@@ -94,13 +103,13 @@ function SignupForm() {
                 >
                     Instructor
                 </button>
-            </div>
+            </div> */}
 
             {/* Tab */}
             <Tab tabData={tabData} field={accountType} setField={setAccountType} />
                 
             {/* Form */}
-            <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4">
+            <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4 mt-10">
                 <div className="flex gap-x-4">
                     <label>
                         <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
