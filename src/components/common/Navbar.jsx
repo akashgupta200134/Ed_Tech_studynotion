@@ -124,7 +124,7 @@ const Navbar = () => {
             </Link>
           )}
 
-          {token !== null && <ProfileDropdown />}
+          {!token === null && <ProfileDropdown />}
         </div>
       </div>
     </div>

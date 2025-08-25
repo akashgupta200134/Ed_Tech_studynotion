@@ -2,8 +2,8 @@
 
 const ProfileDropdown = () => {
   return (
-    <div>
-        
+    <div className=" text-white">
+        hiiii
       
     </div>
   )
