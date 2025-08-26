@@ -5,8 +5,9 @@ import Navbar from "./components/common/Navbar";
 import Signup from "./components/signup";
 import Login from "./pages/Login";
 import ForgetPassword from "./pages/ForgetPassword";
-import updatePassword from "./pages/UpdatePassword"
 import UpdatePassword from "./pages/UpdatePassword";
+import VerifyEmail from "./pages/verifyEmail";
+
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="login" element={<Login/>} />
         <Route path="forgot-password" element = {<ForgetPassword/>}/>
         <Route path="update-password/:id" element = {<UpdatePassword/>}/>
+         <Route path="verify-email" element = { <VerifyEmail/>}></Route>
+        
       </Routes>
 
   
