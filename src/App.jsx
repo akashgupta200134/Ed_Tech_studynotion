@@ -7,9 +7,31 @@ import Login from "./pages/Login";
 import ForgetPassword from "./pages/ForgetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/verifyEmail";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setToken } from "./slices/authSlice";
+import { setUser } from "./slices/profileSlice";
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (token) dispatch(setToken(token));
+    if (user) dispatch(setUser(user));
+  }, [dispatch]);
+
+
+
+
+
+
+
+
+
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter ">
       <Navbar />

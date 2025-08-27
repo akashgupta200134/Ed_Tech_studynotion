@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, matchPath } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Logo from "../../../assets/Logo/Logo-Full-Light.png";
 import NavbarLinks from "../../data/navbar-links";
-import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import "../../utils/costans";
 import { ACCOUNT_TYPE } from "../../utils/costans";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import ProfileDropdown from "../core/Auth/ProfileDropdown";
+import { IoIosArrowDown } from "react-icons/io";
+import ProfileDropDown from "../core/Auth/ProfileDropdown";
 import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
-import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   console.log("Printing base url: ", import.meta.env.VITE_BASE_URL);
@@ -20,16 +18,16 @@ const Navbar = () => {
   const { totalItems } = useSelector((state) => state.cart);
   const location = useLocation();
 
-  const [subLinks, setsublinks] = useState([]);
+  const [subLinks, setSubLinks] = useState([]);
 
+  // Fetch categories (Catalog links)
   const fetchSublinks = async () => {
     try {
       const result = await apiConnector("GET", categories.CATEGORIES_API);
-      console.log("printing catalog sublinks", result);
-      setsublinks(result?.data?.data || []);
+      console.log("Printing catalog sublinks", result);
+      setSubLinks(result?.data?.data || []);
     } catch (error) {
-      console.log(error);
-      console.log("Couldnot able to fetch Catalog list");
+      console.error("Could not fetch Catalog list", error);
     }
   };
 
@@ -37,11 +35,14 @@ const Navbar = () => {
     fetchSublinks();
   }, []);
 
-  const MatchRoute = (route) => matchPath({ path: route }, location.pathname);
+  const matchRoute = (route) =>
+    matchPath({ path: route }, location.pathname);
 
   return (
-    <div className="text-white h-14 items-center  justify-center border-b-[1px] border-richblack-200 mt-1 ">
-      <div className="flex flex-row w-11/12 max-w-maxContent items-center justify-between">
+    <div className="text-white h-14 flex items-center justify-center border-b border-richblack-200 mt-1">
+      <div className="flex w-11/12 max-w-maxContent items-center justify-between">
+        
+        {/* Logo */}
         <Link to={"/"}>
           <img
             src={Logo}
@@ -50,10 +51,9 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* navlinks */}
-
-        <nav className="">
-          <ul className=" text-richblack-25 flex gap-5">
+        {/* Nav Links */}
+        <nav>
+          <ul className="text-richblack-25 flex gap-5">
             {NavbarLinks.map((element, index) => (
               <li key={index}>
                 {element.title === "Catalog" ? (
@@ -61,23 +61,24 @@ const Navbar = () => {
                     <p>{element.title}</p>
                     <IoIosArrowDown />
 
+                    {/* Dropdown */}
                     <div
-                      className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] 
-                            flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible 
-                            group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[250px]"
+                      className="invisible absolute left-1/2 top-[50%] z-[1000] flex w-[200px] -translate-x-1/2 translate-y-[3em] 
+                      flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 
+                      group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[250px]"
                     >
-                      <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
+                      <div className="absolute left-1/2 top-0 -z-10 h-6 w-6 translate-x-[80%] -translate-y-1/2 rotate-45 rounded bg-richblack-5"></div>
 
-                      {subLinks.length ? (
-                        subLinks.map((subLink, index) => (
-                          <Link to={`catalog/${subLink.link}`} key={index}>
-                            <p className="rounded-lg bg-transparent p-3 pl-4 hover:bg-richblack-50">
+                      {subLinks.length > 0 ? (
+                        subLinks.map((subLink, i) => (
+                          <Link to={`catalog/${subLink.link}`} key={i}>
+                            <p className="rounded-lg p-3 pl-4 hover:bg-richblack-50">
                               {subLink.Name}
                             </p>
                           </Link>
                         ))
                       ) : (
-                        <div></div>
+                        <p className="p-2 text-sm">Loading...</p>
                       )}
                     </div>
                   </div>
@@ -85,7 +86,7 @@ const Navbar = () => {
                   <Link to={element?.path}>
                     <p
                       className={`${
-                        MatchRoute(element?.path)
+                        matchRoute(element?.path)
                           ? "text-yellow-25"
                           : "text-richblack-25"
                       }`}
@@ -99,32 +100,38 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className=" flex items-center  gap-x-4 ">
-          {user && user?.accountType != ACCOUNT_TYPE.INSTRUCTOR && (
+        {/* Right Side Buttons */}
+        <div className="flex items-center gap-x-4">
+          {/* Cart */}
+          {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to={"/dashboard/cart"} className="relative">
-              <AiOutlineShoppingCart className="text-white" />
-
-              {totalItems > 0 && <span>{totalItems}</span>}
+              <AiOutlineShoppingCart className="text-2xl text-white" />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-yellow-25 text-black text-xs rounded-full px-2">
+                  {totalItems}
+                </span>
+              )}
             </Link>
           )}
 
+          {/* Login / Signup */}
           {token === null && (
-            <Link to={"/login"}>
-              <button className=" text-richblack-5 border-richblack-700 bg-richblack-700 p-2 rounded">
-                Log in
-              </button>
-            </Link>
+            <>
+              <Link to={"/login"}>
+                <button className="text-richblack-5 border border-richblack-700 bg-richblack-700 px-4 py-2 rounded">
+                  Log in
+                </button>
+              </Link>
+              <Link to={"/signup"}>
+                <button className="text-richblack-25 border border-richblack-700 bg-richblack-700 px-4 py-2 rounded">
+                  Sign Up
+                </button>
+              </Link>
+            </>
           )}
 
-          {token === null && (
-            <Link to={"/signup"}>
-              <button className=" text-richblack-25 border-richblack-700 bg-richblack-700 p-2 rounded">
-                Sign Up
-              </button>
-            </Link>
-          )}
-
-          {!token === null && <ProfileDropdown />}
+          {/* Profile Dropdown */}
+          {token !== null && <ProfileDropDown />}
         </div>
       </div>
     </div>
