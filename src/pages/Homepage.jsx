@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import Highlighttext from "../components/Highlighttext";
-import Button from "../components/Button";
+import Button from "../components/common/Button";
 import Banner from "../../assets/Images/banner.mp4";
 import CodeBlocks from "../components/codeblocks";
 import ExploreMore from "../components/ExploreMore";

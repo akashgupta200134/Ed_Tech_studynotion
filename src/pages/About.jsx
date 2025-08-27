@@ -4,10 +4,14 @@ import about1 from "../../assets/Images/aboutus1.webp"
 import about2 from "../../assets/Images/aboutus2.webp"
 import about3 from "../../assets/Images/aboutus3.webp"
 import founding from "../../assets/Images/FoundingStory.png"
+import LearningGrid from './../pages/LearningGrid'
 
 
 const About = () => {
   return (
+
+
+    // section 1
     <div className=" mb-10">
       <div className="lg:mt-20 lg:flex lg:flex-col lg:items-center lg:text-center lg:w-7/12 lg:mx-auto lg:h-fit">
         <h1 className=" text-white text-4xl font-inter">
@@ -45,6 +49,10 @@ const About = () => {
         </div>
       </div>
 
+
+
+{/* section 2 */}
+
      {/* Intro Line */}
 <div className="text-4xl font-inter text-center text-white mt-10 px-6">
   We are passionate about revolutionizing the way we learn. Our innovative
@@ -52,6 +60,9 @@ const About = () => {
   community to create an{" "}
   <Highlighttext text={"unparalleled educational experience."} />
 </div>
+
+
+{/* section 3 */}
 
 {/* Founding Story Section */}
 <div className="flex flex-row items-center justify-center mt-20 gap-16 px-10">
@@ -91,6 +102,8 @@ const About = () => {
 </div>
 
 
+{/* section 4 */}
+
   <div className="flex flex-row items-start justify-center gap-20 mt-20 px-10">
   {/* Vision */}
   <div className="flex flex-col items-center w-[40%] bg-richblack-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-300">
@@ -122,6 +135,9 @@ const About = () => {
     </p>
   </div>
 </div>
+    
+
+    {/* section 5 */}
 
 <div className="bg-richblack-700 text-white mt-20 py-12 w-full flex flex-row items-center justify-center gap-40 rounded-xl shadow-lg">
   {/* Students */}
@@ -156,6 +172,13 @@ const About = () => {
     <p className="text-richblack-100 mt-2 text-lg">Awards</p>
   </div>
 </div>
+
+
+    
+    {/* section 6 */}
+         
+         <LearningGrid/>
+
 
 
 

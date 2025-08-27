@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import "../../src/App.css";
-import Button from "../components/Button";
+import Button from "./common/Button";
 import Highlighttext from "./Highlighttext";
 import TimelineHome from "./TimelineHome";
 import { useState } from "react";

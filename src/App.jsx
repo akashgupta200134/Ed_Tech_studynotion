@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/common/Navbar";
@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { setToken } from "./slices/authSlice";
 import { setUser } from "./slices/profileSlice";
 import About from "./pages/About";
-
+import ScrollToTop from "./components/ScrollTop";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,32 +25,21 @@ function App() {
     if (user) dispatch(setUser(user));
   }, [dispatch]);
 
-
-
-
-
-
-
-
-
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter ">
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="signup" element={<Signup/>} />
-        <Route path="login" element={<Login/>} />
-        <Route path="forgot-password" element = {<ForgetPassword/>}/>
-        <Route path="update-password/:id" element = {<UpdatePassword/>}/>
-         <Route path="verify-email" element = { <VerifyEmail/>}></Route>
-          <Route path="/about" element = {<About/>}></Route>
+        <ScrollToTop />
+        <Navbar /> 
         
-      </Routes>
-
-  
-
-  
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgetPassword />} />
+          <Route path="/update-password/:id" element={<UpdatePassword />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      
     </div>
   );
 }
