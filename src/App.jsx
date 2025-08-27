@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setToken } from "./slices/authSlice";
 import { setUser } from "./slices/profileSlice";
+import About from "./pages/About";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="forgot-password" element = {<ForgetPassword/>}/>
         <Route path="update-password/:id" element = {<UpdatePassword/>}/>
          <Route path="verify-email" element = { <VerifyEmail/>}></Route>
+          <Route path="/about" element = {<About/>}></Route>
         
       </Routes>
 
