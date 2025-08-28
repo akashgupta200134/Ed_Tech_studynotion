@@ -6,6 +6,7 @@ import about3 from "../../assets/Images/aboutus3.webp"
 import founding from "../../assets/Images/FoundingStory.png"
 import LearningGrid from './../pages/LearningGrid'
 import ContactSection from './ContactSection'
+import Footer from '../components/common/footer'
 
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
 
 
     // section 1
-    <div className=" mb-10">
+    <div className="">
       <div className="lg:mt-20 lg:flex lg:flex-col lg:items-center lg:text-center lg:w-7/12 lg:mx-auto lg:h-fit">
         <h1 className=" text-white text-4xl font-inter">
           Driving Innovation in Online Education for a
@@ -182,6 +183,17 @@ const About = () => {
 
 
          <ContactSection/>
+
+         <div className=' text-4xl font-inter text-white text-center mt-20'>
+
+          Reviews From Others
+
+         </div>
+
+<div className='mt-20'>
+    <Footer/>
+</div>
+       
 
 
 

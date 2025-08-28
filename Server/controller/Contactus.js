@@ -4,10 +4,10 @@ const mailSender = require("../utils/mailSender");
 exports.contactUsController = async (req, res) => {
 console.log("📩 Contact request received:", req.body)
   try {
-    const { firstname, lastname, email, phoneNo, message } = req.body;
+    const { firstname, lastname, email, countryCode, phoneNo, message } = req.body;
 
     // Validation
-    if (!firstname || !lastname || !email || !message) {
+    if (!firstname || !lastname || !email || !countryCode || !message) {
       return res.status(400).json({
         success: false,
         message: "All required fields must be filled",
@@ -19,6 +19,7 @@ console.log("📩 Contact request received:", req.body)
       firstname,
       lastname,
       email,
+      countryCode,
       phoneNo,
       message,
     });
@@ -35,7 +36,7 @@ console.log("📩 Contact request received:", req.body)
         <h3>📩 New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${firstname} ${lastname}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phoneNo || "Not Provided"}</p>
+        <p><strong>Phone:</strong> ${countryCode} ${phoneNo || "Not Provided"}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `;
