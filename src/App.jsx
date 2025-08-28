@@ -13,6 +13,7 @@ import { setToken } from "./slices/authSlice";
 import { setUser } from "./slices/profileSlice";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollTop";
+import ContactForm from "./components/ContactUs/ContactForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
           <Route path="/update-password/:id" element={<UpdatePassword />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
       
     </div>

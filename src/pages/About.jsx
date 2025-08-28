@@ -5,6 +5,7 @@ import about2 from "../../assets/Images/aboutus2.webp"
 import about3 from "../../assets/Images/aboutus3.webp"
 import founding from "../../assets/Images/FoundingStory.png"
 import LearningGrid from './../pages/LearningGrid'
+import ContactSection from './ContactSection'
 
 
 const About = () => {
@@ -178,6 +179,9 @@ const About = () => {
     {/* section 6 */}
          
          <LearningGrid/>
+
+
+         <ContactSection/>
 
 
 
