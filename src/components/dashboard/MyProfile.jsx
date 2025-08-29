@@ -31,7 +31,7 @@ const MyProfile = () => {
         </div>
         <IconBtn
           text="Edit Profile"
-          onclick={() => navigate("/dashboard/settings")}
+          onClick={() => navigate("/dashboard/settings")}
         />
       </div>
 
@@ -41,7 +41,7 @@ const MyProfile = () => {
           <p className="text-lg font-semibold text-richblack-5">About</p>
           <IconBtn
             text="Edit"
-            onclick={() => navigate("/dashboard/settings")}
+            onClick={() => navigate("/dashboard/settings")}
           />
         </div>
         <p className="text-sm text-richblack-300 leading-relaxed">
@@ -57,7 +57,7 @@ const MyProfile = () => {
           </p>
           <IconBtn
             text="Edit"
-            onclick={() => navigate("/dashboard/settings")}
+            onClick={() => navigate("/dashboard/settings")}
           />
         </div>
 

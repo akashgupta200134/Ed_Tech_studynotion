@@ -18,6 +18,7 @@ import MyProfile from "./components/dashboard/MyProfile";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import Error from "./components/common/Error";
+import Settings from "./components/dashboard/Settings";
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
     }
   >
     <Route path="dashboard/my-profile" element={<MyProfile/>} />
+    <Route path="dashboard/Settings" element={<Settings/>} />
   </Route>
 
 <Route path="*" element={<Error/>} />
