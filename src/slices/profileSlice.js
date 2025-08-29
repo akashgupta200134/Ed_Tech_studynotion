@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
 
-    user: null,
+     user : localStorage.getItem("user") ? JSON.parse(localStorage.getItem("token")) :null,
+    loading: false,
 
 
 
@@ -15,6 +16,10 @@ const profileSlice = createSlice({
         setUser(state , value){
             state.user = value.payload;
         },
+        setLoading(state, value) {
+            state.loading = value.payload;
+        },
+
     },
 })
 

@@ -14,8 +14,13 @@ import { setUser } from "./slices/profileSlice";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollTop";
 import ContactForm from "./components/ContactUs/ContactForm";
+import MyProfile from "./components/dashboard/MyProfile";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import Dashboard from "./pages/Dashboard";
+import Error from "./components/common/Error";
 
 function App() {
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,20 +33,33 @@ function App() {
 
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter ">
-        <ScrollToTop />
-        <Navbar /> 
-        
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgetPassword />} />
-          <Route path="/update-password/:id" element={<UpdatePassword />} />
-          <Route path="/verify-email" element={<VerifyEmail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactForm />} />
-        </Routes>
-      
+      <ScrollToTop />
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgetPassword />} />
+        <Route path="/update-password/:id" element={<UpdatePassword />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactForm />} />
+
+        <Route
+    element={
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    }
+  >
+    <Route path="dashboard/my-profile" element={<MyProfile/>} />
+  </Route>
+
+<Route path="*" element={<Error/>} />
+
+
+      </Routes>
     </div>
   );
 }
