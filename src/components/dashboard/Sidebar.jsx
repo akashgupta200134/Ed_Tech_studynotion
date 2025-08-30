@@ -30,7 +30,7 @@ const Sidebar = () => {
       {/* Links Section */}
       <div className="flex flex-col px-3 py-8 space-y-2">
         {sidebarLinks.map((element) => {
-          if (element.type && user?.ACCOUNT_TYPE !== element.type) {
+          if (element.type && user ?.accountType !== element.type) {
             return null;
           }
           return (
