@@ -22,6 +22,7 @@ import Settings from "./components/dashboard/Settings";
 import EnrolledCourses from "./components/dashboard/EnrolledCourses";
 import Cart from "./components/dashboard/cart";
 import { ACCOUNT_TYPE } from "./utils/costans";
+import AddCourse from "./components/dashboard/instructor/AddCourse";
 
 function App() {
 
@@ -58,7 +59,7 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route path="dashboard/my-profile" element={<MyProfile />} />
+          <Route path="dashboard/my-profile" element={<MyProfile/>} />
           <Route path="dashboard/Settings" element={<Settings />} />
 
           { 
@@ -72,6 +73,20 @@ function App() {
               />
             </>
           )}
+
+                    { 
+           
+          user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+            <>
+              <Route path="dashboard/add-course"  element={<AddCourse/>} />
+            </>
+          )}
+
+
+
+
+
+
 
         </Route>
         

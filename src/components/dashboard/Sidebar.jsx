@@ -26,7 +26,7 @@ const Sidebar = () => {
   }
 
   return (
-    <aside className="flex min-w-[240px] flex-col justify-between border-r border-gray-700 bg-richblack-900 text-gray-200">
+    <aside className="flex min-w-[240px] flex-col justify-between border-r border-gray-700 bg-richblack-900  text-gray-200">
       {/* Links Section */}
       <div className="flex flex-col px-3 py-8 space-y-2">
         {sidebarLinks.map((element) => {
