@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import ForgetPassword from "./pages/ForgetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/verifyEmail";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setToken } from "./slices/authSlice";
 import { setUser } from "./slices/profileSlice";
@@ -26,6 +26,7 @@ import { ACCOUNT_TYPE } from "./utils/costans";
 function App() {
 
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.profile);
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
@@ -60,12 +61,14 @@ function App() {
           <Route path="dashboard/my-profile" element={<MyProfile />} />
           <Route path="dashboard/Settings" element={<Settings />} />
 
-          {user.accountType === ACCOUNT_TYPE.STUDENT && (
+          { 
+           
+          user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
               <Route path="dashboard/cart" element={<Cart />} />
               <Route
                 path="dashboard/enrolled-courses"
-                element={<EnrolledCourses />}
+                element={<EnrolledCourses/>}
               />
             </>
           )}
