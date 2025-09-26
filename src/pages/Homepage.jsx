@@ -7,6 +7,7 @@ import CodeBlocks from "../components/codeblocks";
 import ExploreMore from "../components/ExploreMore";
 import InstructorSection from "../components/InstructorSection";
 import Footer from "../components/common/Footer";
+import Footer from "../components/common/Footer";
 
 const Homepage = ({ text, children, active, linkto }) => {
   return (
