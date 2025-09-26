@@ -6,7 +6,7 @@ import Signup from "./components/signup";
 import Login from "./pages/Login";
 import ForgetPassword from "./pages/ForgetPassword";
 import UpdatePassword from "./pages/UpdatePassword";
-import VerifyEmail from "./pages/verifyEmail";
+import VerifyEmail from "./pages/VerifyEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setToken } from "./slices/authSlice";
@@ -48,7 +48,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgetPassword />} />
         <Route path="/update-password/:id" element={<UpdatePassword />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/verify-email" element={<VerifyEmail/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactForm />} />
 
