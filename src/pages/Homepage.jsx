@@ -6,7 +6,7 @@ import Banner from "../../assets/Images/banner.mp4";
 import CodeBlocks from "../components/codeblocks";
 import ExploreMore from "../components/ExploreMore";
 import InstructorSection from "../components/InstructorSection";
-import Footer from "../components/common/footer";
+import Footer from "../components/common/Footer";
 
 const Homepage = ({ text, children, active, linkto }) => {
   return (
