@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCourseCategories, addCourseDetails, editCourseDetails } from "../../../services/operations/courseDetailsApi"
 import { HiOutlineCurrencyRupee } from 'react-icons/hi';
-import ChipInput from './chipInput';
+import ChipInput from './ChipInput';
 import Upload from './Upload';
 import RequirementsField from './RequirementsField';
 import IconBtn from "../../common/IconBtn"
