@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import { useSelector } from "react-redux";
-import frameImg from "../../../assets/Images/frame.png";
+import frameImg from "../../../public/Images/frame.png";
 import SignupForm from "../../pages/Signupfrom";
 import LoginForm from "../core/Auth/LoginForm";
 

@@ -1,4 +1,4 @@
-import loginImg from "../../assets/Images/login.webp"
+import loginImg from "../../public/Images/login.webp"
 import Template from "../components/common/templet"
 
 function Login() {

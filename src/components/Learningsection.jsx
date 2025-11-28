@@ -1,7 +1,7 @@
 import Highlighttext from "./Highlighttext";
-import planYourprogress from "../../assets/Images/Plan_your_lessons.svg"
- import knowyourprogress from "../../assets/Images/Know_your_progress.svg"
- import comparewithothers from "../../assets/Images/Compare_with_others.svg"
+import planYourprogress from "../../public/Images/Plan_your_lessons.svg"
+ import knowyourprogress from "../../public/Images/Know_your_progress.svg"
+ import comparewithothers from "../../public/Images/Compare_with_others.svg"
 import Button from "./common/Button";
 
 

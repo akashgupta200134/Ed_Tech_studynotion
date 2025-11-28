@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Logo from "../../../assets/Logo/Logo-Full-Light.png";
+import Logo from "../../../public/Images/Logo/Logo-Full-Light.png";
 import NavbarLinks from "../../data/navbar-links";
 import { ACCOUNT_TYPE } from "../../utils/costans";
 import { AiOutlineShoppingCart } from "react-icons/ai";

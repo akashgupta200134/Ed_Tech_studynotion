@@ -1,9 +1,9 @@
-import React from 'react'
+
 import Highlighttext from '../components/Highlighttext'
-import about1 from "../../assets/Images/aboutus1.webp"
-import about2 from "../../assets/Images/aboutus2.webp"
-import about3 from "../../assets/Images/aboutus3.webp"
-import founding from "../../assets/Images/FoundingStory.png"
+import about1 from "../../public/Images/aboutus1.webp"
+import about2 from "../../public/Images/aboutus2.webp"
+import about3 from "../../public/Images/aboutus3.webp"
+import founding from "../../public/Images/FoundingStory.png"
 import LearningGrid from './../pages/LearningGrid'
 import ContactSection from './ContactSection'
 import Footer from '../components/common/Footer'

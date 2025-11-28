@@ -1,4 +1,4 @@
-import studyNotionImage from "../../../assets/Logo/Logo-Full-Light.png"
+import studyNotionImage from "../../../public/Images/Logo/Logo-Full-Light.png"
 
 import {FaGoogle, FaTwitter, FaFacebook, FaYoutube} from "react-icons/fa"
 import { Link } from "react-router-dom"

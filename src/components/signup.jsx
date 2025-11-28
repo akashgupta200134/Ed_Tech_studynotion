@@ -1,4 +1,4 @@
-import signupImg from "../../assets/Images/signup.webp"
+import signupImg from "../../public/Images/signup.webp"
 import Template from "../components/common/templet"
 
 function Signup() {
