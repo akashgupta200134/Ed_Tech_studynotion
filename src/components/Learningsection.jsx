@@ -9,11 +9,11 @@ import Button from "./common/Button";
 
 const Learningsection = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-24 ">
-      <div className="text-5xl text-center font-bold">
+    <div className="flex flex-col items-center justify-center p-15 mt-15  md:mt-0 md:p-24 ">
+      <div className="md:text-5xl text-4xl text-center font-bold">
         Your swiss knife for
         <Highlighttext text={" Learning Any Language"} />
-        <div className="text-[16px] max-w-5xl  font-normal p-[20px]">
+        <div className="md:text-[16px] text-xl md:mt-0 mt-4 max-w-5xl  font-normal md:p-[20px]">
           Using <span className="font-semibold text-blue-600">Spin</span>,
           learning multiple languages becomes effortless. With{" "}
           <span className="font-semibold">20+ languages</span>, realistic
@@ -22,7 +22,7 @@ const Learningsection = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center mb-10 -mt-5 ">
+      <div className="flex flex-row items-center justify-center mb-10 mt-8 md:-mt-5 ">
         <img
           src={planYourprogress}
           alt="planYourprogress"

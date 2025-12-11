@@ -23,14 +23,14 @@ const Homepage = ({ text, children, active, linkto }) => {
           </div>
         </Link>
 
-        <div className="mt-12 text-[44px] font-bold font-inter whitespace-nowrap">
+        <div className="mt-12 text-xl md:text-[44px] font-bold font-inter whitespace-nowrap">
           Empower Your Future with{" "}
           <span className="inline-block">
             <Highlighttext text={"Coding Skills"} />
           </span>
         </div>
 
-        <div className=" text-md font-inter w-[800px] mt-2 text-richblack-300">
+        <div className=" text-[16px] md:text-md font-inter md:w-[800px] mt-2 text-richblack-300">
           <p className="">
             With our online coding courses, you can learn at your own pace, from
             anywhere in the world, and get access to a wealth of resources,
@@ -55,7 +55,7 @@ const Homepage = ({ text, children, active, linkto }) => {
             loop
             autoPlay
             playsInline
-            className=" aspect-video object-contain rounded-lg shadow-[15px_15px_rgba(255,255,255)]"
+            className="aspect-video object-contain rounded-lg shadow-[15px_15px_rgba(255,255,255)]"
           >
             <source src={Banner} type="video/mp4" />
           </video>
@@ -66,7 +66,7 @@ const Homepage = ({ text, children, active, linkto }) => {
           <CodeBlocks
             position={"lg:flex-row text-left"}
             heading={
-              <div className="text-5xl font-semibold">
+              <div className="md:text-5xl text-4xl font-semibold">
                 Unlock Your
                 <Highlighttext text={" coding potential "} />
                 with our online courses
@@ -97,16 +97,16 @@ const Homepage = ({ text, children, active, linkto }) => {
         <div>
           <CodeBlocks
             position={
-              "flex lg:flex-row-reverse text-left my-20 justify-between gap-10 lg:gap-10"
+              "flex lg:flex-row-reverse text-left md:text-left  -mt-2 md:mt-0 md:my-20 justify-between gap-10 lg:gap-10"
             }
             heading={
-              <div className="text-5xl font-semibold ml-18">
+              <div className="md:text-5xl text-4xl font-semibold  md:ml-18">
                 Start
                 <Highlighttext text={" coding in seconds "} />
               </div>
             }
             subheading={
-              <div className=" text-sm ml-19">
+              <div className=" text-sm md:ml-19">
                 Take the leap and start coding today! With our hands-on learning
                 approach, you'll be creating real projects from your very first
                 lesson.
@@ -116,7 +116,7 @@ const Homepage = ({ text, children, active, linkto }) => {
               btnText: "Continue Lesson",
               linkto: "/signup",
               active: true,
-              className: "ml-19",
+              className: "md:ml-19",
             }}
             ctabtn2={{
               btnText: "Learn More",

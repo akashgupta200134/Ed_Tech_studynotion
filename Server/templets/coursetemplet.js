@@ -31,7 +31,7 @@ exports.courseEnrollment = (courseName, name) => {
             .message {
                 font-size: 18px;
                 font-weight: bold;
-                marign-bottom: 20px;
+                margin-bottom: 20px;
             }
             
             .body {
@@ -40,7 +40,7 @@ exports.courseEnrollment = (courseName, name) => {
             }
             
             .cta {
-                display: inline-block
+                display: inline-block;
                 padding: 10px 20px;
                 background-color: #FFD60A;
                 color: #000000;

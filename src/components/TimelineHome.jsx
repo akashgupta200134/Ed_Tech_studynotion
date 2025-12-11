@@ -33,17 +33,17 @@ const TimeLine = [
 const TimelineHome = () => {
   return (
     <>
-    <div className="flex flex-row items-center  -mt-14 gap-15">
+    <div className="md:flex md:flex-row items-center  -mt-14 gap-15">
       {/* Left Section */}
 
-      <div className="w-[40%] flex flex-col ml-20 m-16 relative  gap-5">
+      <div className=" md:w-[40%] grid grid-cols-2  md:flex  md:flex-col md:ml-20 md:m-16 relative  md:gap-5">
         {TimeLine.map((element, index) => (
           <div
             key={index}
             className="flex flex-row items-center gap-4 p-5 relative"
           >
             {/* Logo */}
-            <div className="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full shadow-md shadow-richblue-800">
+            <div className="w-12 h-12 p-[6px] md:p-0 flex items-center justify-center bg-gray-100 rounded-full shadow-md shadow-richblue-800">
               <img
                 src={element.Logo}
                 alt={element.Heading}
@@ -53,7 +53,7 @@ const TimelineHome = () => {
 
             {/* Vertical Dotted Line (except last item) */}
             {index < TimeLine.length - 1 && (
-              <div className="w-[2px] absolute left-[42px]  top-[75px] h-12 border-dotted border-r-1 border-gray-400"></div>
+              <div className="md:w-[2px] md:absolute md:left-[42px]   md:top-[75px] h-12 border-dotted md:border-r-1  border-gray-400"></div>
             )}
 
             {/* Text */}
@@ -66,7 +66,7 @@ const TimelineHome = () => {
       </div>
 
       {/* Right Section (for video/image/etc later) */}
-      <div className="relative w-[60%] ">
+      <div className="relative md:w-[60%] w-[370px] md:ml-0 ml-5 md:mt-0 mt-10">
         <div className="absolute inset-0 rounded-lg z-0 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 blur-3xl opacity-40"></div>
         <img
           src={TimelineBanner}
@@ -75,14 +75,14 @@ const TimelineHome = () => {
         />
       </div>
 
-      <div className="absolute left-[50%] mt-[520px] translate-x-[22%] uppercase rounded -translate-y-[50%] z-20 h-[100px] flex flex-row items-center w-[400px] bg-caribbeangreen-700">
-        <div className="flex items-center gap-4 lg:border-r border-caribbeangreen-300 p-4">
-          <p className="text-5xl font-bold   text-white">10</p>
+      <div className="absolute md:left-[50%] -ml-[47px] w-[350px] md:mt-[520px] translate-x-[22%] uppercase rounded -translate-y-[50%] z-20 h-[100px] flex flex-row items-center  md:w-[400px] bg-caribbeangreen-700">
+        <div className="flex items-center gap-2 md:gap-4 lg:border-r border-caribbeangreen-300 p-3 md:p-4">
+          <p className="md:text-5xl text-[40px] font-bold   text-white">10</p>
           <p className="text-caribbeangreen-300 text-sm ">years experiences</p>
         </div>
 
-        <div className="flex items-center gap-4 p-4">
-          <p className="text-5xl font-bold text-white">250</p>
+        <div className="flex items-center  gap-2 md:gap-4 p-2 md:p-4">
+          <p className="md:text-5xl text-[40px] font-bold text-white">250</p>
           <p className="text-caribbeangreen-300 text-sm">Types of courses</p>
         </div>
       </div>
